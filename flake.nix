@@ -26,7 +26,13 @@
 
           # `nix develop`
           devShell = pkgs.mkShell {
-            nativeBuildInputs = with pkgs; [ cargo gnuplot libiconv rustc ];
+            nativeBuildInputs = with pkgs; [
+              cargo
+              cargo-criterion
+              gnuplot
+              libiconv
+              rustc
+            ];
           };
         }
     );

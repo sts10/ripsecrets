@@ -118,8 +118,13 @@ Most of the time, your pre-commit will be running on a small number of files, so
 
 ## Running benchmarks
 
+Some one-time setup is required:
+1. Install [cargo-criterion](https://github.com/bheisler/cargo-criterion): `cargo install cargo-criterion`. Note that step is not needed if using Nix Flake.
+1. Initialize all Git submodules: `git submodule init && git submodule update`. Benchmarks are performed against the [Sentry repo](https://github.com/getsentry/sentry), which is included as a submodule.
+
+To actually run the benchmarks:
 ```shell
-$ cargo bench
+$ cargo criterion
 ```
 
 The results will then be viewable at `target/criterion/report/index.html`.
